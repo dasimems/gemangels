@@ -2,26 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+html{
+  user-select: none;
+  -webkit-user-select: none;
+}
+body {
+  color: white;
+  min-width: 350px;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.scale-up{
+  animation: scale-up 12s linear forwards;
+}
+
+.camera-changing{
+  animation: camera-changing 0.5s linear forwards;
+}
+
+.flash{
+  animation: flash 0.7s linear forwards;
+  backdrop-filter: blur(10px);
+  filter: blur(10px);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+}
+
+@keyframes flash {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes scale-up{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.5);
+  }
+}
+@keyframes camera-changing{
+  from{
+    height: 35px;
+    top: -35px;
+  }
+  to{
+    height: 20px;
+    top: -20px;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.rotate-x-90{
+  transform: rotateX(90deg);
+}
+.rotate-x-0{
+  transform: rotateX(0deg);
+}
+.-rotate-x-90{
+  transform: rotateX(-90deg);
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.general-bg{
+  background: linear-gradient(-50deg, #02082c 30%, #1f2134, #010310);
+}
+
+.special-scroll,
+.special-scroll-two {
+  scrollbar-width: thin;
+}
+
+.special-scroll-horizontal,
+.special-scroll-horizontal-two {
+  overflow-x: scroll;
+}
+
+.special-scroll-vertical,
+.special-scroll-vertical-two {
+  overflow-y: scroll;
+}
+
+.special-shadow {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+.special-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.special-scroll-two::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.special-scroll-two::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.special-scroll-two::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
 }

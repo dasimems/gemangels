@@ -1,0 +1,20 @@
+{
+    "files.autoSave": "off",
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "vs-code-prettier-eslint.prettierLast": false,
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "bysabi.prettier-vscode-standard"
+    },
+}
